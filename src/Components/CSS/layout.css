@@ -1,0 +1,65 @@
+.NavSpace {
+    justify-content: flex-end !important;
+    /* margin-top: -500px; */
+    margin-right: -70px;
+    /* margin-left: 330px; */
+  }
+  
+  .navbar-light .navbar-nav .nav-link {
+    font-size: 16px;
+    /* text-transform: uppercase; */
+    /* color: #cfc6c6;s */
+    padding: 6px 30px;
+    /* font-weight: bold; */
+    /* font-family: roboto; */
+    border-radius: 68px;
+    font-family: "Lato", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 150%;
+    /* or 27px */
+  
+    color: #183a1d !important;
+  }
+  
+  .navbar-light .navbar-brand {
+    color: white !important;
+  }
+  
+  /* .navbar-light {
+    background-color: #014358 !important;
+  } */
+  
+  .navbar-light .navbar-nav .nav-link:hover {
+    /* text-transform: uppercase; */
+    /* background-color: #e1eedd; */
+    color:rgb(31, 237, 203) !important;
+    /* font-weight: bold; */
+  }
+  
+  .shadowed {
+    /* -webkit-filter: drop-shadow(5px 5px 5px #222); */
+    /* filter: drop-shadow(5px 5px 5px #222); */
+    /* margin-top: 50px; */
+    width: 300px;
+    margin-top: 15px;
+  }
+
+  .MuiInputLabel-outlined.MuiInputLabel-shrink {
+    transform: translate(4px, -22px) scale(1) !important; 
+}
+
+main.MuiContainer-root.MuiContainer-maxWidthSm{
+  margin-top: 45px;
+}
+
+.MuiTypography-root.MuiTypography-body1{
+  padding: 16px;
+  font-family:"Times New Roman", Times, serif;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.MuiGrid-root.MuiGrid-item.MuiGrid-grid-xs-9{
+  margin-bottom: 20px;
+}
