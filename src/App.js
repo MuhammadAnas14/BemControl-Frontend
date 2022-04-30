@@ -4,6 +4,7 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./Components/login";
 import LedControl from './Components/LedControl'
+import Verification from './Components/verification'
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />}></Route>
           <Route path="/detection" element={<LedControl />} />
+          <Route path="/verify" element={<Verification />} />
         </Routes>
     </Router>
   );
