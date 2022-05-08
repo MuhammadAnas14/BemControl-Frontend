@@ -79,12 +79,13 @@ const  SignIn  = () => {
       password: password,
     };
 
-    axios.post("/signUp", data, {
+    axios.post("http://localhost:5000/api/v1/users/signup", data, {
         headers: {
           "Content-Type": "application/json",
         },
       })
       .then((response)=>{
+        console.log(response)
         setErrortext("Account Created ! Please verify your account and log In ")
 
       })

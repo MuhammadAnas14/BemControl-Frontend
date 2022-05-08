@@ -75,8 +75,9 @@ const  SignIn  = () => {
       email: email,
       password: password,
     };
+    
 
-    axios.post("/signIn", data, {
+    axios.post("http://localhost:5000/api/v1/users/login", data, {
       headers: {
         "Content-Type": "application/json",
       },
