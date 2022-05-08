@@ -4,6 +4,32 @@ import "./CSS/ledControl.css";
 
 const Cam = () => {
 
+ 
+
+  const onChangeLedOff = () => {
+
+    setSatusButton(<Button value="1" className="btnn-v" onClick={onChangeLedOn}>
+    On
+    </Button>)
+
+    
+  }
+
+  const onChangeLedOn = () => {
+
+    setSatusButton(<Button value="1" className="btnn-v" onClick={onChangeLedOff}>
+    OFF
+    </Button>)
+
+
+  }
+
+
+  const [ledStatus,setLedStatus] = useState("On")
+  const [StatusButton,setSatusButton] = useState(<Button value="1" className="btnn-v" onClick={onChangeLedOn}>
+  On
+  </Button>)
+
   
 
   return (
@@ -13,12 +39,8 @@ const Cam = () => {
           Press The Button to Change The Status
         </h1>
         <div className="menu">
-          <Button value="1" className="btnn-v">
-            ON
-          </Button>
-          <Button value="2" className="btnn-v">
-            OFF
-          </Button>
+          <h3>LED</h3>
+          {StatusButton}
         </div>
       </div>
     </Container>

@@ -88,8 +88,6 @@ const  SignIn  = () => {
     };
 
     for(let i=0;i<users.length;i++){
-
-
       
       if(data.email === users[i].email && data.password === users[i].password){
         // authentication.onAuthentication();
@@ -100,14 +98,8 @@ const  SignIn  = () => {
         setErrortext("Invalid Credential")
       }
     }
-
-    
-
   };
   const classes = useStyles();
-
-
-
 
   return (
     <MuiThemeProvider theme={theme}>
