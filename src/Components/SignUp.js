@@ -16,8 +16,8 @@ import Lock from '@material-ui/icons/Lock';
 import Mail from '@material-ui/icons/Mail';
 import {useNavigate} from 'react-router-dom';
 // import authentication from './auth';
+import axios  from 'axios';
 import './CSS/layout.css'
-import axios from 'axios';
 
 
 const theme = createTheme({
@@ -62,7 +62,9 @@ const useStyles = makeStyles((theme) => ({
 
 const  SignIn  = () => {
 
+
   const [email, setemail] = useState("");
+  const [name, setName] = useState("");
   const [password, setpassword] = useState("");
   const [errortext, setErrortext] = useState('');
 
@@ -72,32 +74,30 @@ const  SignIn  = () => {
     event.preventDefault();
 
     let data = {
+      name: name,  
       email: email,
       password: password,
     };
 
-    axios.post("/signIn", data, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-    .then((response)=>{
-      console.log(response)
-      setErrortext("Log In Success")
-      history('/Dashboard')
+    axios.post("/signUp", data, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then((response)=>{
+        setErrortext("Account Created ! Please verify your account and log In ")
 
-    })
-    .catch((error) => {
-      console.log(error)
+      })
+      .catch(() => {
+        setErrortext("Error creating your account")
 
-    })
+      })
+
+    
   };
+
+ 
   const classes = useStyles();
-
-   const handleSignUp = () => {
-
-    history('/SignUp')
-  }
 
 
   return (
@@ -116,7 +116,7 @@ const  SignIn  = () => {
         
         <Typography component="div">
           <Box color="black" marginBottom={1} fontFamily="ui-monospace" fontSize={30} fontWeight={600} m={-2}>
-              SIGN IN
+              SIGN UP
           </Box>
         </Typography>
         
@@ -132,6 +132,24 @@ const  SignIn  = () => {
               justify="center"
               alignItems="center"
           >
+              <Grid item xs={9}>
+              <TextField
+                className={classes.inputF}
+                variant="outlined"
+                margin="normal"
+                required
+                fullWidth
+                id="name"
+                label="You Full Name"
+                name="name"
+                autoComplete="name"
+                autoFocus
+                onChange={(ev) => setName(ev.target.value)}
+                InputProps={{
+                  startAdornment: <InputAdornment position="start"><Mail color="disabled"/></InputAdornment>,
+                }}
+              />
+              </Grid>
             <Grid item xs={9}>
               <TextField
                 className={classes.inputF}
@@ -179,27 +197,7 @@ const  SignIn  = () => {
               className={classes.submit}
               m={0}
               >
-                Sign In
-              </Button>
-            </Grid>
-
-            <Grid item>
-              <Link href="#" variant="body2" color="secondary" >
-                Forgot your password?
-              </Link>
-            </Grid>
-
-            <Grid item xs={9} >
-              <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              color="secondary"
-              className={classes.submit}
-              onClick={handleSignUp}
-              m={0}
-              >
-                Dont have a account ! Create It
+                Create Account
               </Button>
             </Grid>
 

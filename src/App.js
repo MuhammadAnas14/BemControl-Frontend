@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./Components/login";
 import LedControl from './Components/LedControl'
 import Verification from './Components/verification'
+import SignUp from './Components/SignUp'
 
 
 function App() {
@@ -12,8 +13,9 @@ function App() {
     <Router>
         <Routes>
           <Route path="/" element={<Login />}></Route>
-          <Route path="/detection" element={<LedControl />} />
+          <Route path="/Dashboard" element={<LedControl />} />
           <Route path="/verify" element={<Verification />} />
+          <Route path="/SignUp" element={<SignUp />} />
         </Routes>
     </Router>
   );
